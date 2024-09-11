@@ -15,14 +15,14 @@ export class UserResolver {
   @Query(() => [User])
   queryUser() {
     return this.userService.findAll();
-  }
-
+  } 
   @UseGuards(GqlAuthGuard)
   @Query(() => User)
   user(@Args('id') id: string) {
     return this.userService.findById(id);
   }
 
+  // @UseGuards(GqlAuthGuard)
   @Mutation(() => User)
   createUser(@Args('createUserInput') createUserInput: CreateUserInput) {
     try {

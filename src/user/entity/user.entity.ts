@@ -16,6 +16,7 @@ export class User {
   @Column('character varying', { name: 'email', unique: true, nullable: true })
   email: string | null;
 
+  @Field((type) => String)
   @Column('character varying', { name: 'password', nullable: false })
   password: string | null;
 
